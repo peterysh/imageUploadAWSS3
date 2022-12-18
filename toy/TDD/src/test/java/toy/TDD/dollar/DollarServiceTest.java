@@ -11,16 +11,14 @@ public class DollarServiceTest {
     @Test
     public void testMultiplication() throws Exception{
         Dollar five = new Dollar(5);
-        assertThat(10).isEqualTo(five.times(2).amount);
+        assertThat(new Dollar(10)).isEqualTo(five.times(2));
     }
 
     @Test
     public void testMultiplication2times() throws Exception{
         Dollar five = new Dollar(5);
-        Dollar product = five.times(2);
-        assertThat(product.amount).isEqualTo(10);
-        product = five.times(3);
-        assertThat(product.amount).isEqualTo(15);
+        assertThat(five.times(2)).isEqualTo(new Dollar(10));
+        assertThat(five.times(3)).isEqualTo(new Dollar(15));
     }
 
     @Test
