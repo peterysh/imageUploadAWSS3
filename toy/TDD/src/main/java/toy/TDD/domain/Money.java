@@ -2,17 +2,20 @@ package toy.TDD.domain;
 
 public abstract class Money {
     protected int amount;
+    protected String currency;
 
     public abstract Money times(int multiplier);
 
-    public abstract String currency();
+    public String currency(){
+        return currency;
+    };
 
     public static Money dollar(int amount) {
         return new Dollar(amount);
     }
 
     public static Money franc(int amount){
-        return new Franc(amount);
+        return new Franc(amount, "CHF");
     }
 
     @Override
