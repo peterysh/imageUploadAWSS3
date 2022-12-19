@@ -1,7 +1,13 @@
 package toy.TDD.domain;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+
+    public abstract Money times(int multiplier);
+
+    public static Money dollar(int amount) {
+        return new Dollar(amount);
+    }
 
     @Override
     public boolean equals(Object obj) {
