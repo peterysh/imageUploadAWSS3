@@ -3,7 +3,7 @@ package toy.TDD.domain;
 import lombok.ToString;
 
 @ToString
-public class Money {
+public class Money implements Expression{
     public int amount;
     public String currency;
 
@@ -35,7 +35,7 @@ public class Money {
                 && currency().equals(money.currency());
     }
 
-    public Money plus(Money addend) {
+    public Expression plus(Money addend){
         return new Money(amount + addend.amount, currency);
     }
 }
