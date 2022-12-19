@@ -19,17 +19,17 @@ public class DollarServiceTest {
     @Test
     public void testMultiplication2times() throws Exception{
         Money five = Money.dollar(5);
-        assertThat(five.times(2)).isEqualTo(new Dollar(10));
-        assertThat(five.times(3)).isEqualTo(new Dollar(15));
+        assertThat(five.times(2)).isEqualTo(Money.dollar(10));
+        assertThat(five.times(3)).isEqualTo(Money.dollar(15));
     }
 
     @Test
     public void testEquality(){
-        assertTrue(new Dollar(5).equals(new Dollar(5)));
-        assertFalse(new Dollar(5).equals( new Dollar(6)));
+        assertTrue(Money.dollar(5).equals(new Dollar(5)));
+        assertFalse(Money.dollar(5).equals( new Dollar(6)));
         assertTrue(new Franc(5).equals(new Franc(5)));
         assertFalse(new Franc(5).equals( new Franc(6)));
-        assertFalse(new Franc(5).equals(new Dollar(5)));
+        assertFalse(new Franc(5).equals(Money.dollar(5)));
     }
 
     @Test
