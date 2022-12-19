@@ -1,6 +1,8 @@
 package toy.TDD.dollar;
 
 import org.junit.jupiter.api.Test;
+import toy.TDD.domain.Bank;
+import toy.TDD.domain.Expression;
 import toy.TDD.domain.Money;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,12 +40,6 @@ public class DollarServiceTest {
     public void testDifferentClassEquality(){
         assertTrue(new Money(10,"CHF").equals(
                 Money.franc(10)));
-    }
-
-    @Test
-    public void testSimpleAddition(){
-        Money sum = Money.dollar(5).plus(Money.dollar(5));
-        assertEquals(Money.dollar(10),sum);
     }
 
     @Test
