@@ -6,6 +6,11 @@ public abstract class Money {
 
     public abstract Money times(int multiplier);
 
+    public Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
+
     public String currency(){
         return currency;
     };
