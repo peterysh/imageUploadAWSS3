@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import toy.TDD.domain.Dollar;
 import toy.TDD.domain.Franc;
+import toy.TDD.domain.Money;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,7 +18,7 @@ public class DollarServiceTest {
 
     @Test
     public void testMultiplication2times() throws Exception{
-        Dollar five = new Dollar(5);
+        Money five = Money.dollar(5);
         assertThat(five.times(2)).isEqualTo(new Dollar(10));
         assertThat(five.times(3)).isEqualTo(new Dollar(15));
     }
