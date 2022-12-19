@@ -1,14 +1,19 @@
 package toy.TDD.domain;
 
-public abstract class Money {
-    protected int amount;
-    protected String currency;
+import lombok.ToString;
 
-    public abstract Money times(int multiplier);
+@ToString
+public class Money {
+    public int amount;
+    public String currency;
 
     public Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
+    }
+
+    public Money times(int multiplier){
+        return new Money(amount * multiplier,currency);
     }
 
     public String currency(){
@@ -27,6 +32,6 @@ public abstract class Money {
     public boolean equals(Object obj) {
         Money money = (Money) obj;
         return amount == money.amount
-                && getClass().equals(money.getClass());
+                && currency().equals(money.currency());
     }
 }
